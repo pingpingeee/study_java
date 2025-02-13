@@ -1,34 +1,35 @@
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
 
-        // 플레이어 수 정의(입력)
-        int playerCount = Integer.parseInt(st.nextToken());
+        int x[] = new int[num1];
+        int y[] = new int[num1];
+        int color[] = new int[num1];
 
-        // 플레이어 이름들어가는 곳
-        String[] playerName = new String[playerCount];
+        int xyResult[] = new int[num1];
 
-        // 플레이어 이름 입력
-        for (int i = 0; i < playerName.length; i++) {
-            playerName[i] = br.readLine();
+        for (int i = 0; i < num1; i++) {
+            x[i] = sc.nextInt();
+            y[i] = sc.nextInt();
+            color[i] = sc.nextInt();
         }
-        int max[] = new int[playerCount];
-        String[] test = new String[playerCount];
 
-        for (int i = 0; i < playerName.length; i++) {
-            if (test[i].charAt(0) != playerName[i].charAt(0)) {
-                test[i] = String.valueOf(playerName[i].charAt(0));
-            } else {
-                max[i] += 1;
-            }
+        int squareMax = 0, squareMin = 0;
+        for (int i = 0; i < num1; i++) {
+            xyResult[i] = x[i] + y[i];
+            if (squareMax >= xyResult[i]) squareMax = xyResult[i];
+            if (squareMin <= xyResult[i]) squareMin = xyResult[i];
+
+
         }
+        System.out.println(Math.abs((squareMax - squareMin)) + 1);
+
 
     }
 }
