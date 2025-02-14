@@ -10,7 +10,19 @@ public class NestedIf {
         System.out.print("학년 입력 : ");
         int num2 = sc.nextInt();
 
-        switch (num2) {
+        if (num1 >= 60) {
+            if (num2 <= 3) {
+                System.out.println("합격");
+            } else if (num2 == 4) {
+                System.out.println("불합격");
+            } else {
+                System.out.println("합격");
+            }
+        } else {
+            System.out.println("불합격");
+        }
+
+        /*switch (num2) {
             case 1:
             case 2:
             case 3:
@@ -31,6 +43,6 @@ public class NestedIf {
             default:
                 System.out.println("잘못된 값 입력");
                 break;
-        }
+        }*/
     }
 }
