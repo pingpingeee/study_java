@@ -15,6 +15,7 @@ class Book3 {
 public class BookArray {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+//        1. 여기서 '객체 배열'을 생성해주고
         Book3[] book = new Book3[2];
 
         for (int i = 0; i < book.length; i++) {
@@ -24,6 +25,7 @@ public class BookArray {
             System.out.print("저자 입력 : ");
 //            String author = sc.next();
             String author = sc.nextLine();
+//            2. 여기서 '객체 배열' 안의 '객체' 각각 생성해주는것
             book[i] = new Book3(title, author);
         }
 
