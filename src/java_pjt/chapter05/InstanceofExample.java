@@ -15,7 +15,10 @@ public class InstanceofExample {
 
     public static void main(String[] args) {
 //        업캐스팅
-        Parent parent = new Child();
-        method1(parent);
+        Parent parentA = new Child();
+        method1(parentA); // 성공
+
+        Parent parentB = new Parent();
+        method1(parentB); // 실패
     }
 }
